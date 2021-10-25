@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Instrument } from '../instrument';
 
 @Component({
@@ -8,22 +8,16 @@ import { Instrument } from '../instrument';
 })
 export class InstComponent implements OnInit {
 
-  myinsts: Instrument[] = [
-    { kind: 'Piano', color: 'Black'},
-    { kind: 'Piano', color: 'White'},
-    { kind: 'Guitar', color: 'Red'}
-  ]
-
-  thekind: string = '';
-  thecolor: string = '';
+  @Input() theinst: Instrument = {
+    kind: 'Piano',
+    color: 'Black'
+  };
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  add() {
-    this.myinsts.push({ kind: this.thekind, color: this.thecolor });
-  }
+
 
 }

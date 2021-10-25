@@ -1,11 +1,5 @@
-<p>My Musical Instruments</p>
-
-<ng-container *ngFor="let myinst of myinsts">
-    <div>
-        {{myinst.kind}} {{myinst.color}}
-    </div>
-</ng-container>
-<br /><br />
-Kind: <input type="text" [(ngModel)]="thekind" /><br />
-Color: <input type="text" [(ngModel)]="thecolor" /><br />
-<button (click)="add()">Add</button>
+<div>
+    Kind: {{ theinst.kind }}<br />
+    Color: {{ theinst.color }}<br />
+    <button>Delete</button>
+</div>
