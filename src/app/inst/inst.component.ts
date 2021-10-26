@@ -21,6 +21,9 @@ export class InstComponent implements OnInit {
   }
 
   deleteMe() {
+    // Ultimately we want to call the "deleteInst" function. But it
+    // lives inside the parent. And we don't have direct access
+    // to the parent's functions.
     // Call up to parent to remove "me" from the list
     //alert('Clicked DeleteMe');
     this.delete.emit(this.theinst);
