@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Instrument } from '../instrument';
 
 @Component({
@@ -13,11 +13,17 @@ export class InstComponent implements OnInit {
     color: 'Black'
   };
 
+  @Output() delete: EventEmitter<Instrument> = new EventEmitter<Instrument>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
+  deleteMe() {
+    // Call up to parent to remove "me" from the list
+    //alert('Clicked DeleteMe');
+    this.delete.emit(this.theinst);
+  }
 
 }

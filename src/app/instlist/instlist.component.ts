@@ -26,4 +26,11 @@ export class InstlistComponent implements OnInit {
     this.myinsts.push({kind:this.thekind, color:this.thecolor});
   }
 
+
+  deleteInst(inst: Instrument) {
+    //alert(inst.kind);
+    let i = this.myinsts.indexOf(inst);
+    this.myinsts.splice(i, 1);
+  }
+ 
 }

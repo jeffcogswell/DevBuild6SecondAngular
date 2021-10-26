@@ -1,8 +1,9 @@
 <p>instlist works!</p>
 
 <ng-container *ngFor="let myinst of myinsts">
-    <app-inst [theinst]="myinst"></app-inst>
+    <app-inst [theinst]="myinst" (delete)="deleteInst($event)"></app-inst>
 </ng-container>
+
 Kind: <input type="text" [(ngModel)]="thekind" /><br />
 Color: <input type="text" [(ngModel)]="thecolor" /><br />
 <button (click)="add()">Add</button>
